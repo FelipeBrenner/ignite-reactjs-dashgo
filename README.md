@@ -1,3 +1,7 @@
+## Tecnologias
+
+- Yup (biblioteca JavaScript para fazer validação de objetos, ou schemas)
+
 ## Anotações
 
 ### Tipos
