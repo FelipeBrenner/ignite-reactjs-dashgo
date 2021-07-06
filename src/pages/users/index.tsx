@@ -28,7 +28,20 @@ export default function UserList() {
     const response = await fetch("https://localhost:3000/api/users");
     const data = await response.json();
 
-    return data;
+    const users = data.users.map((user) => {
+      return {
+        id: user.id,
+        name: user.name,
+        email: user.email,
+        createdAt: new Date(user.createdAt).toLocaleDateString("pt-BR", {
+          day: "2-digit",
+          month: "short",
+          year: "numeric",
+        }),
+      };
+    });
+
+    return users;
   });
 
   const isWideVersion = useBreakpointValue({
@@ -87,64 +100,41 @@ export default function UserList() {
                   </Tr>
                 </Thead>
                 <Tbody>
-                  <Tr>
-                    <Td px={["4", "4", "6"]}>
-                      <Checkbox colorScheme="twitter" />
-                    </Td>
-                    <Td>
-                      <Box>
-                        <Text fontWeight="bold">Felipe Brenner</Text>
-                        <Text fontSize="sm" color="gray.300">
-                          felipeobrenner@hotmail.com
-                        </Text>
-                      </Box>
-                    </Td>
-                    {isWideVersion && (
-                      <>
-                        <Td>30 de Junho, 2021</Td>
-                        <Td>
-                          <Button
-                            as="a"
-                            size="sm"
-                            fontSize="sm"
-                            colorScheme="teal"
-                            leftIcon={<Icon as={RiPencilLine} fontSize="16" />}
-                          >
-                            Editar
-                          </Button>
+                  {data.map((user) => {
+                    return (
+                      <Tr key={user.id}>
+                        <Td px={["4", "4", "6"]}>
+                          <Checkbox colorScheme="twitter" />
                         </Td>
-                      </>
-                    )}
-                  </Tr>
-                  <Tr>
-                    <Td px={["4", "4", "6"]}>
-                      <Checkbox colorScheme="twitter" />
-                    </Td>
-                    <Td>
-                      <Box>
-                        <Text fontWeight="bold">Felipe Brenner</Text>
-                        <Text fontSize="sm" color="gray.300">
-                          felipeobrenner@hotmail.com
-                        </Text>
-                      </Box>
-                    </Td>
-                    {isWideVersion && (
-                      <>
-                        <Td>30 de Junho, 2021</Td>
                         <Td>
-                          <Button
-                            as="a"
-                            size="sm"
-                            fontSize="sm"
-                            colorScheme="teal"
-                            leftIcon={<Icon as={RiPencilLine} fontSize="16" />}
-                          >
-                            Editar
-                          </Button>
+                          <Box>
+                            <Text fontWeight="bold">{user.name}</Text>
+                            <Text fontSize="sm" color="gray.300">
+                              {user.email}
+                            </Text>
+                          </Box>
                         </Td>
-                      </>
-                    )}
-                  </Tr>
+                        {isWideVersion && (
+                          <>
+                            <Td>{user.createdAt}</Td>
+                            <Td>
+                              <Button
+                                as="a"
+                                size="sm"
+                                fontSize="sm"
+                                colorScheme="teal"
+                                leftIcon={
+                                  <Icon as={RiPencilLine} fontSize="16" />
+                                }
+                              >
+                                Editar
+                              </Button>
+                            </Td>
+                          </>
+                        )}
+                      </Tr>
+                    );
+                  })}
                 </Tbody>
               </Table>
 
