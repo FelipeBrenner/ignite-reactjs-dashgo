@@ -8,6 +8,7 @@ Projeto desenvolvido com as seguintes tecnologias:
 - Chakra UI (biblioteca de componentes React que aumenta a produtividade ao desenvolver interfaces, fornecendo um conjunto de componentes simples, modular e acessíveis)
 - React Hook Form (biblioteca que oferece suporte para validação nativa de formulários)
 - Yup (biblioteca para fazer validação de objetos ou schemas em conjunto com o React Hook Form)
+- React Query (biblioteca para manipular os dados com fetch, cache e update, sem alterar estado e acessar o back end)
 
 ## 💻 Projeto
 
