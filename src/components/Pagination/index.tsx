@@ -65,7 +65,13 @@ export function Pagination({
 
         {previousPages.length > 0 &&
           previousPages.map((page) => {
-            return <PaginationItem onPageChange={onPageChange} number={page} />;
+            return (
+              <PaginationItem
+                key={page}
+                onPageChange={onPageChange}
+                number={page}
+              />
+            );
           })}
 
         <PaginationItem
@@ -76,7 +82,13 @@ export function Pagination({
 
         {nextPages.length > 0 &&
           nextPages.map((page) => {
-            return <PaginationItem onPageChange={onPageChange} number={page} />;
+            return (
+              <PaginationItem
+                key={page}
+                onPageChange={onPageChange}
+                number={page}
+              />
+            );
           })}
 
         {currentPage + siblingsCount < lastPage && (

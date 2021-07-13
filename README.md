@@ -9,6 +9,7 @@ Projeto desenvolvido com as seguintes tecnologias:
 - React Hook Form (biblioteca que oferece suporte para validação nativa de formulários)
 - Yup (biblioteca para fazer validação de objetos ou schemas em conjunto com o React Hook Form)
 - React Query (biblioteca para manipular os dados com fetch, cache e update, sem alterar estado e acessar o back end)
+- Mutations (formas de criar, alterar ou deletar coisas dentro da API)
 
 ## 💻 Projeto
 
