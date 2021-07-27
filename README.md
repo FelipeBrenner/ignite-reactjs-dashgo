@@ -11,10 +11,13 @@ Projeto desenvolvido com as seguintes tecnologias:
 - React Hook Form (biblioteca que oferece suporte para validação nativa de formulários)
 - Yup (biblioteca para fazer validação de objetos ou schemas em conjunto com o React Hook Form)
 - React Query (biblioteca para manipular os dados com fetch, cache e update, sem alterar estado e acessar o back end)
+- Mirage JS (biblioteca de simulação de API que permite construir, testar e compartilhar um aplicativo JavaScript funcional completo antes de ser desenvolvido o back-end)
 
 ## 💻 Projeto
 
 O dashgo é um painel administrativo contendo dashboard, listagem e cadastro de usuário usando Chakra UI no Next.js. Foi desenvolvido durante as aulas do Chapter IV da trilha de ReactJS do Bootcamp Ignite da Rocketseat.
+
+<img alt="preview" title="preview" src=".github/preview.gif">
 
 ## 📖 Anotações
 
@@ -48,6 +51,8 @@ $ yarn dev
   - Login: "/"
   - Usuários: "/users"
   - Dashboard: "/dashboard"
+
+- Só é possível a visualização dos usuários por ambiente de desenvolvimento, e não no [deploy](https://dashgo-felipebrenner.vercel.app/), devido ao uso do Mirage JS e faker.js.
 
 ---
 
